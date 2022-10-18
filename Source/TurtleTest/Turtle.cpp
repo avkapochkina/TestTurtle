@@ -17,7 +17,6 @@ ATurtle::ATurtle()
 void ATurtle::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogActor, Warning, TEXT("ATurtle::BeginPlay()"));
 }
 
 void ATurtle::Tick(float DeltaTime)
@@ -36,6 +35,11 @@ void ATurtle::Init(const FVector Spawn, const FVector End)
 	if (AudioComponent)
 	{
 		AudioComponent = UGameplayStatics::SpawnSound2D(this, StartSound);
+	}
+	
+	if (Particle)
+	{
+		UGameplayStatics::SpawnEmitterAttached(Particle, MeshComponent);
 	}
 }
 
@@ -68,6 +72,12 @@ void ATurtle::StopMovement()
 	{
 		AudioComponent = UGameplayStatics::SpawnSound2D(this, StartSound);
 	}
+	
+	if (Particle)
+	{
+		UGameplayStatics::SpawnEmitterAttached(Particle, MeshComponent);
+	}
+	
 	UE_LOG(LogActor, Error, TEXT("ATurtle::StopMovement()"));
 }
 

@@ -34,7 +34,8 @@ public:
 	UStaticMeshComponent* MeshComponent;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UAudioComponent* AudioComponent;
-	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UParticleSystem* Particle;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USoundBase* StartSound;
 	
