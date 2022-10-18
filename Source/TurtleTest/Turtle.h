@@ -10,7 +10,7 @@
 // Базовый класс черепашек
 // Характер движения задаётся в BP, EventTick
 UCLASS()
-class MYPROJECT_API ATurtle : public AActor
+class TURTLETEST_API ATurtle : public AActor
 {
 	GENERATED_BODY()
 

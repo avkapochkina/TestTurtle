@@ -7,7 +7,7 @@
 #include "Nest.generated.h"
 
 UCLASS()
-class MYPROJECT_API ANest : public AActor
+class TURTLETEST_API ANest : public AActor
 {
 	GENERATED_BODY()
 

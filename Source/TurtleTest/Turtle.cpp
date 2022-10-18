@@ -3,6 +3,8 @@
 
 #include "Turtle.h"
 
+#include "Kismet/GameplayStatics.h"
+
 ATurtle::ATurtle()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -42,8 +44,8 @@ void ATurtle::Movement()
 	// Проверяем оставшееся до EndPoint расстояние
 	// Если оно больше одного шага - продолжаем движение, меньше - отключаем звук движения и Tick
 	
-	const FVector Delta = EndPoint - GetActorLocation();
-	if(Delta.Length() > Speed)
+	const FVector Delta = EndPoint - GetActorLocation(); 
+	if(Delta.Size() > Speed)
 	{
 		SetActorLocation(GetActorLocation() + Speed * MovementDirection);
 		if (AudioComponent && !AudioComponent->IsActive())
